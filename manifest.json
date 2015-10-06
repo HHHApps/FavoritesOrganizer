@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "Imgur - Favorites Organizer",
+  "description": "This extension adds new functionality to your Favorites section on Imgur.",
+  "version": "1.2",
+  "background":{
+	"scripts": ["/lib/jquery-1.11.3.min.js", "/lib/underscore-min.js", "favoritesOrganizer.js"]
+  },
+  "icons": {
+	"16": "images/icon16.png",
+	"48": "images/icon48.png",
+	"128": "images/icon128.png"
+  },
+  "content_scripts": [{
+  	"matches": ["*://*.imgur.com/*"],
+  	"js":      ["loadFavoritesOrganizer.js"]
+  }],
+  "permissions": [
+    "<all_urls>",
+	"webNavigation",
+	"tabs",
+	"storage"
+  ]
+}
